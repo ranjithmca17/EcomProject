@@ -121,7 +121,7 @@
 //           success: false,
 //           message: `Not enough stock for this product ${product.title}`,
 //         });
-//       }
+//       }order/details
 
 //       product.totalStock -= item.quantity;
 
