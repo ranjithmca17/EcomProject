@@ -44,13 +44,12 @@ function ProductImageUpload({
       inputRef.current.value = "";
     }
   }
-
   async function uploadImageToCloudinary() {
     setImageLoadingState(true);
     const data = new FormData();
     data.append("my_file", imageFile);
     const response = await axios.post(
-      "http://localhost:5000/api/admin/products/upload-image",
+      "https://ecomproject-sk3k.onrender.com/api/admin/products/upload-image",
       data
     );
     console.log(response, "response");
