@@ -122,7 +122,7 @@ function ShoppingHome() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="relative w-full h-[600px] overflow-hidden">
+      {/* <div className="relative w-full h-[600px] overflow-hidden">
         {featureImageList && featureImageList.length > 0
           ? featureImageList.map((slide, index) => (
               <img
@@ -160,7 +160,61 @@ function ShoppingHome() {
         >
           <ChevronRightIcon className="w-4 h-4" />
         </Button>
-      </div>
+      </div> */}
+
+<div className="relative w-full h-[600px] overflow-hidden">
+  {/* Map through the feature images and display them */}
+  {featureImageList && featureImageList.length > 0 ? (
+    <div className="relative w-full h-full">
+      {featureImageList.map((slide, index) => (
+        <img
+          src={slide?.image}
+          key={index}
+          className={`${
+            index === currentSlide ? "opacity-100" : "opacity-0"
+          } absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000`}
+        />
+      ))}
+      
+      {/* Left Arrow Button */}
+      <Button
+        variant="outline"
+        size="icon"
+        onClick={() =>
+          setCurrentSlide(
+            (prevSlide) =>
+              (prevSlide - 1 + featureImageList.length) % featureImageList.length
+          )
+        }
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80 z-10"
+      >
+        <ChevronLeftIcon className="w-4 h-4" />
+      </Button>
+
+      {/* Right Arrow Button */}
+      <Button
+        variant="outline"
+        size="icon"
+        onClick={() =>
+          setCurrentSlide(
+            (prevSlide) => (prevSlide + 1) % featureImageList.length
+          )
+        }
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80 z-10"
+      >
+        <ChevronRightIcon className="w-4 h-4" />
+      </Button>
+    </div>
+  ) : (
+    // Fallback content if no images are available
+    <img
+      src={bannerOne}  // Fallback banner image
+      className="w-full h-full object-cover"
+      alt="Fallback Banner"
+    />
+  )}
+</div>
+
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">
@@ -231,3 +285,10 @@ function ShoppingHome() {
 }
 
 export default ShoppingHome;
+
+
+
+
+
+
+
