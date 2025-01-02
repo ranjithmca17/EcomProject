@@ -1,6 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+// Set the base URL for your API
+const BASE_URL = "https://ecomproject-sk3k.onrender.com";
+
 const initialState = {
   isAuthenticated: false,
   isLoading: true,
@@ -13,7 +16,7 @@ export const registerUser = createAsyncThunk(
   async (formData) => {
     console.log(formData);
     const response = await axios.post(
-      "http://localhost:5000/api/auth/register",
+      `${BASE_URL}/api/auth/register`,  // Updated URL
       formData,
       {
         withCredentials: true,
@@ -31,7 +34,7 @@ export const loginUser = createAsyncThunk(
     console.log(formData);
     
     const response = await axios.post(
-      "http://localhost:5000/api/auth/login",
+      `${BASE_URL}/api/auth/login`,  // Updated URL
       formData,
       {
         withCredentials: true,
@@ -47,7 +50,7 @@ export const logoutUser = createAsyncThunk(
 
   async () => {
     const response = await axios.post(
-      "http://localhost:5000/api/auth/logout",
+      `${BASE_URL}/api/auth/logout`,  // Updated URL
       {},
       {
         withCredentials: true,
@@ -63,7 +66,7 @@ export const checkAuth = createAsyncThunk(
 
   async () => {
     const response = await axios.get(
-      "http://localhost:5000/api/auth/check-auth",
+      `${BASE_URL}/api/auth/check-auth`,  // Updated URL
       {
         withCredentials: true,
         headers: {

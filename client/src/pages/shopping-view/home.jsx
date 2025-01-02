@@ -15,7 +15,7 @@ import {
   ShoppingBasket,
   UmbrellaIcon,
   WashingMachine,
-  WatchIcon,
+  WatchIcon, 
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
@@ -162,6 +162,7 @@ function ShoppingHome() {
         </Button>
       </div> */}
 
+{/* <pre>{process.env.REACT_APP_SECRET_NAME}</pre> */}
 <div className="relative w-full h-[600px] overflow-hidden">
   {/* Map through the feature images and display them */}
   {featureImageList && featureImageList.length > 0 ? (
