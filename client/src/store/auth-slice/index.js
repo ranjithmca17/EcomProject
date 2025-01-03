@@ -5,7 +5,7 @@ import axios from "axios";
 
 // Set the base URL for your API
 // const BASE_URL = "https://ecomproject-sk3k.onrender.com";
-// const BASE_URL="http://localhost:5000";
+// const BASE_URL="https://ecomproject-sk3k.onrender.com";
 
 const initialState = {
   isAuthenticated: false,
@@ -20,7 +20,7 @@ export const registerUser = createAsyncThunk(
   async (formData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/auth/register`,  // Updated URL
+        `https://ecomproject-sk3k.onrender.com/api/auth/register`,  // Updated URL
         formData,
         {
           withCredentials: true,
@@ -39,7 +39,7 @@ export const loginUser = createAsyncThunk(
   async (formData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/auth/login`,  // Updated URL
+        `https://ecomproject-sk3k.onrender.com/api/auth/login`,  // Updated URL
         formData,
         {
           withCredentials: true,
@@ -58,7 +58,7 @@ export const logoutUser = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/auth/logout`,  // Updated URL
+        `https://ecomproject-sk3k.onrender.com/api/auth/logout`,  // Updated URL
         {},
         {
           withCredentials: true,
@@ -77,7 +77,7 @@ export const checkAuth = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/auth/check-auth`,  // Updated URL
+        `https://ecomproject-sk3k.onrender.com/api/auth/check-auth`,  // Updated URL
         {
           withCredentials: true,
           headers: {
@@ -200,7 +200,7 @@ export default authSlice.reducer;
 //   async (formData) => {
 //     console.log(formData);
 //     const response = await axios.post(
-//       "http://localhost:5000/api/auth/register",
+//       "https://ecomproject-sk3k.onrender.com/api/auth/register",
 //       formData,
 //       {
 //         withCredentials: true,
@@ -218,7 +218,7 @@ export default authSlice.reducer;
 //     console.log(formData);
     
 //     const response = await axios.post(
-//       "http://localhost:5000/api/auth/login",
+//       "https://ecomproject-sk3k.onrender.com/api/auth/login",
 //       formData,
 //       {
 //         withCredentials: true,
@@ -234,7 +234,7 @@ export default authSlice.reducer;
 
 //   async () => {
 //     const response = await axios.post(
-//       "http://localhost:5000/api/auth/logout",
+//       "https://ecomproject-sk3k.onrender.com/api/auth/logout",
 //       {},
 //       {
 //         withCredentials: true,
@@ -250,7 +250,7 @@ export default authSlice.reducer;
 
 //   async () => {
 //     const response = await axios.get(
-//       "http://localhost:5000/api/auth/check-auth",
+//       "https://ecomproject-sk3k.onrender.com/api/auth/check-auth",
 //       {
 //         withCredentials: true,
 //         headers: {
